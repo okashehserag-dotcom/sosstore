@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#E7D9C4"/>
+  <meta name="description" content="SOS STORE"/>
+  <title>SOS STORE</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <a class="skip" href="#main">تخطي للمحتوى</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span>شحن سريع • تجربة فاخرة • متجر جاهز للتعبئة</span>
+      <a class="topbar__link" href="#products">تسوق الآن</a>
+    </div>
+  </div>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <button class="iconBtn iconBtn--ghost" id="menuBtn" type="button" aria-label="القائمة" aria-expanded="false">☰</button>
+
+      <a class="brand" href="#top" aria-label="SOS STORE">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__title">SOS STORE</span>
+          <span class="brand__sub">Luxury • Minimal • Mobile First</span>
+        </span>
+      </a>
+
+      <div class="header__right">
+        <div class="search" role="search">
+          <input id="globalSearch" class="search__input" type="search" placeholder="ابحث عن منتج..." autocomplete="off"/>
+          <button class="search__btn" id="searchClear" type="button" aria-label="مسح">✕</button>
+        </div>
+
+        <button class="iconBtn" id="themeBtn" type="button" aria-label="تبديل الوضع">◐</button>
+        <button class="iconBtn" id="wishBtn" type="button" aria-label="المفضلة">
+          ♥ <span class="badgeCount" id="wishCount">0</span>
+        </button>
+        <button class="iconBtn" id="cartBtn" type="button" aria-label="السلة">
+          🛒 <span class="badgeCount" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="التنقل">
+      <div class="container nav__inner">
+        <a class="nav__link" href="#collections">الأقسام</a>
+        <a class="nav__link" href="#products">المنتجات</a>
+        <a class="nav__link" href="#contact">تواصل</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__card reveal">
+          <div class="hero__eyebrow">واجهة متجر عالمية — جاهزة للتعبئة</div>
+          <h1 class="hero__title">تصميم فاخر، سلاسة عالية، ميزات قوية بدون تعقيد</h1>
+          <p class="hero__desc">سلة + مفضلة + تعليقات لكل منتج + بحث قوي + فلاتر + سلايدر للأقسام + أداء سريع.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#collections">استكشف الأقسام</a>
+            <a class="btn btn--ghost" href="#products">كل المنتجات</a>
+          </div>
+          <div class="hero__stats">
+            <div class="stat">
+              <div class="stat__k">Mobile First</div>
+              <div class="stat__v">UX</div>
+            </div>
+            <div class="stat">
+              <div class="stat__k">Lightweight</div>
+              <div class="stat__v">Fast</div>
+            </div>
+            <div class="stat">
+              <div class="stat__k">Local Storage</div>
+              <div class="stat__v">Saved</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__art reveal" aria-hidden="true">
+          <div class="artCard"></div>
+          <div class="artCard artCard--b"></div>
+          <div class="artCard artCard--c"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collections" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">الأقسام</h2>
+          <p class="section__sub">٤ أقسام رئيسية. كل قسم يفتح مساحة عرض فخمة بسلايدر + بحث + فلترة.</p>
+        </div>
+        <div class="collections" id="collectionsGrid"></div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">All Products</h2>
+          <p class="section__sub">بحث أقوى + فلاتر + ترتيب + تحميل المزيد.</p>
+        </div>
+
+        <div class="toolbar reveal">
+          <div class="chips" id="tagChips"></div>
+
+          <div class="toolbar__right">
+            <select class="select" id="sortSelect" aria-label="ترتيب">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="priceLow">Price: Low</option>
+              <option value="priceHigh">Price: High</option>
+              <option value="nameAZ">Name: A-Z</option>
+            </select>
+            <button class="btn btn--ghost btn--sm" id="resetFilters" type="button">إعادة ضبط</button>
+          </div>
+        </div>
+
+        <div class="grid" id="productsGrid" aria-live="polite"></div>
+
+        <div class="center">
+          <button class="btn btn--primary" id="loadMore" type="button">Load More</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contactCard reveal">
+          <div class="section__head section__head--tight">
+            <h2 class="section__title">تواصل</h2>
+            <p class="section__sub">تحويل مباشر إلى إنستقرام</p>
+          </div>
+          <a class="btn btn--primary" target="_blank" rel="noopener" href="https://instagram.com/sos_sstorre">@sos_sstorre</a>
+          <div class="muted">يفتح في تبويب جديد</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>© <span id="year"></span> SOS STORE</div>
+        <a class="nav__link" href="#top">أعلى</a>
+      </div>
+    </footer>
+
+    <button class="toTop" id="toTop" type="button" aria-label="العودة للأعلى">↑</button>
+
+    <aside class="drawer" id="menuDrawer" aria-hidden="true">
+      <div class="drawer__overlay" data-close="menu"></div>
+      <div class="drawer__panel">
+        <div class="drawer__head">
+          <div class="drawer__title">القائمة</div>
+          <button class="iconBtn" type="button" data-close="menu" aria-label="إغلاق">✕</button>
+        </div>
+        <div class="drawer__body">
+          <a class="drawer__link" href="#collections" data-close="menu">الأقسام</a>
+          <a class="drawer__link" href="#products" data-close="menu">المنتجات</a>
+          <a class="drawer__link" href="#contact" data-close="menu">تواصل</a>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="drawer" id="cartDrawer" aria-hidden="true">
+      <div class="drawer__overlay" data-close="cart"></div>
+      <div class="drawer__panel">
+        <div class="drawer__head">
+          <div class="drawer__title">سلة المشتريات</div>
+          <button class="iconBtn" type="button" data-close="cart" aria-label="إغلاق">✕</button>
+        </div>
+        <div class="drawer__body" id="cartItems"></div>
+        <div class="drawer__foot">
+          <div class="drawer__row">
+            <span>الإجمالي</span>
+            <strong id="cartTotal">0</strong>
+          </div>
+          <button class="btn btn--primary" id="checkoutBtn" type="button">إتمام الطلب</button>
+          <button class="btn btn--ghost" id="clearCart" type="button">تفريغ السلة</button>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="drawer" id="wishDrawer" aria-hidden="true">
+      <div class="drawer__overlay" data-close="wish"></div>
+      <div class="drawer__panel">
+        <div class="drawer__head">
+          <div class="drawer__title">المفضلة</div>
+          <button class="iconBtn" type="button" data-close="wish" aria-label="إغلاق">✕</button>
+        </div>
+        <div class="drawer__body" id="wishItems"></div>
+        <div class="drawer__foot">
+          <button class="btn btn--ghost" id="clearWish" type="button">تفريغ المفضلة</button>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="drawer" id="collectionDrawer" aria-hidden="true">
+      <div class="drawer__overlay" data-close="collection"></div>
+      <div class="drawer__panel drawer__panel--wide">
+        <div class="drawer__head">
+          <div>
+            <div class="drawer__title" id="collectionTitle">Collection</div>
+            <div class="drawer__sub" id="collectionSub">—</div>
+          </div>
+          <button class="iconBtn" type="button" data-close="collection" aria-label="إغلاق">✕</button>
+        </div>
+
+        <div class="drawer__body">
+          <div class="controls">
+            <input class="input" id="collectionSearch" type="search" placeholder="ابحث داخل القسم..." autocomplete="off"/>
+            <select class="select" id="collectionFilter" aria-label="فلترة">
+              <option value="all">All</option>
+            </select>
+          </div>
+
+          <div class="slider">
+            <div class="sliderTop">
+              <div class="sliderTitle">اسحب أو استخدم الأسهم</div>
+              <div class="sliderBtns">
+                <button class="iconBtn" type="button" id="colPrev" aria-label="السابق">‹</button>
+                <button class="iconBtn" type="button" id="colNext" aria-label="التالي">›</button>
+              </div>
+            </div>
+            <div class="viewport" id="colViewport">
+              <div class="track" id="colTrack"></div>
+            </div>
+          </div>
+
+          <div class="hint" id="colCount"></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="modal" id="commentModal" aria-hidden="true">
+      <div class="modal__overlay" data-close="comment"></div>
+      <div class="modal__panel" role="dialog" aria-label="التعليقات">
+        <div class="modal__head">
+          <div>
+            <div class="modal__title" id="commentTitle">تعليقات</div>
+            <div class="modal__sub" id="commentSub">—</div>
+          </div>
+          <button class="iconBtn" type="button" data-close="comment" aria-label="إغلاق">✕</button>
+        </div>
+
+        <div class="modal__body">
+          <form class="commentForm" id="commentForm" autocomplete="off">
+            <input class="input" id="commentName" maxlength="22" placeholder="اسمك" required/>
+            <input class="input" id="commentText" maxlength="140" placeholder="اكتب تعليق..." required/>
+            <button class="btn btn--primary" type="submit">إرسال</button>
+          </form>
+
+          <div class="comments" id="commentList"></div>
+        </div>
+
+        <div class="modal__foot">
+          <button class="btn btn--ghost" id="clearComments" type="button">مسح تعليقات هذا المنتج</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
